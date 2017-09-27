@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+        <RelativeLayout
+            android:id="@+id/album">
+            <ImageView
+                android:id="@+id/album_cover"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/a0"
+                android:scaleType="centerCrop"
+                android:alpha="127" />
+            <TextView
+                android:id="@+id/album_played_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:textSize="10sp"
+                android:text="300万"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_headset_black_48dp"
+                android:layout_toLeftOf="@id/album_played_num"/>
+            <TextView
+                android:id="@+id/album_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/album_cover"
+                android:text="hhhhhhh"/>
+        </RelativeLayout>
+
+</GridLayout>
