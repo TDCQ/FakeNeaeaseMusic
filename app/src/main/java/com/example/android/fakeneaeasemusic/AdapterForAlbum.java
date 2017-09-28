@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.android.fakeneaeasemusic.model.Album;
 
-import static android.R.attr.start;
+import java.util.ArrayList;
 
 /**
  * Created by lenovo on 9/26/2017.

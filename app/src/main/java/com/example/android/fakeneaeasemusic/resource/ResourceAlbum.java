@@ -1,4 +1,7 @@
-package com.example.android.fakeneaeasemusic;
+package com.example.android.fakeneaeasemusic.resource;
+
+import com.example.android.fakeneaeasemusic.model.Album;
+import com.example.android.fakeneaeasemusic.model.Song;
 
 import java.util.ArrayList;
 

@@ -7,6 +7,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.example.android.fakeneaeasemusic.model.Album;
+import com.example.android.fakeneaeasemusic.resource.ResourceAlbum;
+
 import java.util.ArrayList;
 
 

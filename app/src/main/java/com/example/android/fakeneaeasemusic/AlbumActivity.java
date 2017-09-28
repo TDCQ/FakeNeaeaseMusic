@@ -1,10 +1,12 @@
 package com.example.android.fakeneaeasemusic;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.android.fakeneaeasemusic.model.Album;
+import com.example.android.fakeneaeasemusic.resource.ResourceAlbum;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class AlbumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
+        setContentView(R.layout.album);
 
         // 查找视图
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);

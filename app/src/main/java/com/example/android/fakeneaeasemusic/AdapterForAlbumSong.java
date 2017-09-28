@@ -1,6 +1,7 @@
 package com.example.android.fakeneaeasemusic;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.android.fakeneaeasemusic.model.Album;
+import com.example.android.fakeneaeasemusic.model.Song;
+
 import java.util.List;
+
+import static android.R.attr.start;
 
 /**
  * Created by lenovo on 9/21/2017.
@@ -16,21 +22,21 @@ import java.util.List;
 
 public class AdapterForAlbumSong extends RecyclerView.Adapter<AdapterForAlbumSong.ViewHolder>   {
     private Album mDataset;
-    private Context mContext;
-    private List<Song> albumList;
 
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView song_name, sound_quality, singer, album_title;
+        TextView song_name, sound_quality, singer, album_title;
+        LinearLayout lv_song_in_album_list;
         public ViewHolder(LinearLayout v) {
             super(v);
             song_name = v.findViewById(R.id.song_name);
             sound_quality = v.findViewById(R.id.sound_quality);
             singer = v.findViewById(R.id.singer);
             album_title = v.findViewById(R.id.album_title);
+            lv_song_in_album_list = v.findViewById(R.id.song_in_album_list);
         }
     }
 
@@ -49,13 +55,24 @@ public class AdapterForAlbumSong extends RecyclerView.Adapter<AdapterForAlbumSon
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Song song = mDataset.getArrayList().get(position);
+        final Song song = mDataset.getArrayList().get(position);
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.album_title.setText(song.getAlbum());
         holder.song_name.setText(song.getName());
         holder.singer.setText(song.getSinger());
         holder.sound_quality.setText(song.getSound_quality());
+        holder.lv_song_in_album_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                Intent playSongIntent = new Intent(context, SongActivity.class);
+                playSongIntent.putExtra("song_name", song.getName());
+                playSongIntent.putExtra("singer", song.getSinger());
+                context.startActivity(playSongIntent);
+
+            }
+        });
 
     }
 

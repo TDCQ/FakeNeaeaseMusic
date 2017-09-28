@@ -1,4 +1,4 @@
-package com.example.android.fakeneaeasemusic;
+package com.example.android.fakeneaeasemusic.model;
 
 /**
  * Created by lenovo on 9/21/2017.

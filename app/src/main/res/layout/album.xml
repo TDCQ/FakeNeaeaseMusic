@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical">
 
+        // 歌单标题
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +25,7 @@
                 android:src="@drawable/a0" />
 
             <TextView
-                android:id="@+id/album_title"
+                android:id="@+id/song_list_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -36,13 +37,14 @@
                 android:id="@+id/album_creator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/album_title"
+                android:layout_below="@id/song_list_title"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toEndOf="@id/album_cover"
                 android:text="原点" />
         </RelativeLayout>
 
+        // 播放全部
         <RelativeLayout
             android:id="@+id/list_title"
             android:layout_width="match_parent"
@@ -59,107 +61,37 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_toRightOf="@id/ic_play_all_icon"
                 android:text="@string/play_all_in_list" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:layout_alignParentEnd="true"
                 android:text="@string/multi_choice" />
         </RelativeLayout>
 
+        // 歌单歌曲列表
         <LinearLayout
             android:id="@+id/music_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_below="@id/list_title"
             android:orientation="vertical" >
 
             <!--专辑歌曲列表-->
-            <RelativeLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:scrollbars="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginTop="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_alignParentStart="true"
-                    android:gravity="center_vertical"
-                    android:textSize="20sp"
-                    android:text="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:layout_alignParentEnd="true"
-                    android:text="@string/other_options" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="45dp">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/the_1th_song_name" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:layout_alignParentBottom="true"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SQ"
-                            android:textColor="@android:color/holo_red_light"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:text="@string/the_1th_song_singer"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="4dp"
-                            android:layout_marginStart="4dp"
-                            android:text="-"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/the_1th_song_belong_album"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-
-
-
-            </RelativeLayout>
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
 
-</ScrollView>
+</LinearLayout>

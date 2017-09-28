@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.android.fakeneaeasemusic.SongActivity">
+
+    <LinearLayout
+        android:id="@+id/play_control_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_repeat_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:rotation="180"
+            android:src="@drawable/ic_skip_next_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_play_circle_outline_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_skip_next_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_menu_black_48dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/song_play_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/play_control_set">
+        <TextView
+            android:id="@+id/song_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"/>
+
+        <TextView
+            android:id="@+id/song_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="03:50"/>
+
+        <SeekBar
+            android:id="@+id/song_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/song_start_time"
+            android:layout_toStartOf="@id/song_end_time"
+            android:max="100"
+            android:progress="20" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/operate_the_song_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/song_play_status"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_like_heart"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_file_download_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_message_black_48dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_more_vert_black_48dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/operate_the_song_set"
+        android:layout_alignParentTop="true"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/a0"/>
+
+            <ImageView
+                android:id="@+id/song_of_album_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shape_album"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
