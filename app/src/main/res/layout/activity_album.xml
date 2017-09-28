@@ -1,17 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.fakeneaeasemusic.AlbumActivity">
+    android:layout_height="match_parent">
 
-    <!--A RecyclerView with some commonly used attributes -->
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/my_recycler_view"-->
-        <!--android:scrollbars="vertical"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/album_margin_top"
+        android:orientation="vertical">
+
+        // 歌单标题
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/album_margin_end">
+
+            <ImageView
+                android:id="@+id/album_cover"
+                android:layout_width="@dimen/width_album_cover_in_detail"
+                android:layout_height="@dimen/height_album_cover_in_detail"
+                android:layout_marginStart="@dimen/margin_start_album_cover_in_detail"
+                android:scaleType="centerCrop"
+                android:src="@drawable/a0" />
+
+            <TextView
+                android:id="@+id/song_list_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_album_title_detail"
+                android:layout_marginTop="@dimen/margin_top_album_title_detail"
+                android:layout_toEndOf="@id/album_cover"
+                android:text="@string/example_album_title" />
+
+            <TextView
+                android:id="@+id/album_creator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/song_list_title"
+                android:layout_marginStart="@dimen/margin_start_album_creator_detail"
+                android:layout_marginTop="@dimen/margin_top_album_creator_detail"
+                android:layout_toEndOf="@id/album_cover"
+                android:text="@string/album_creator" />
+        </RelativeLayout>
+
+        // 播放全部
+
+        <RelativeLayout
+            android:id="@+id/list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_list_title"
+            android:layout_marginStart="@dimen/margin_start_list_title"
+            android:layout_marginTop="@dimen/margin_top_margin_top">
+
+            <ImageView
+                android:id="@+id/ic_play_all_icon"
+                android:layout_width="@dimen/width_ic_play_all"
+                android:layout_height="@dimen/height_ic_play_all"
+                android:src="@drawable/ic_play_circle_outline_black_48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_ic_play_all"
+                android:layout_toEndOf="@id/ic_play_all_icon"
+                android:gravity="center_vertical"
+                android:text="@string/play_all_in_list" />
+
+            <ImageView
+                android:layout_width="@dimen/width_ic_play_all"
+                android:layout_height="@dimen/height_ic_play_all"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_three_dot_with_item" />
+
+        </RelativeLayout>
+
+        // 歌单歌曲列表
+
+        <LinearLayout
+            android:id="@+id/music_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--专辑歌曲列表-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

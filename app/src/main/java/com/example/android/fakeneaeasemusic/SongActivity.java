@@ -15,7 +15,7 @@ public class SongActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("song_name");
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null ){
+        if (actionBar != null) {
             actionBar.setTitle(name);
         }
         ;

@@ -18,7 +18,7 @@ public class AlbumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.album);
+        setContentView(R.layout.activity_album);
 
         // 查找视图
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);

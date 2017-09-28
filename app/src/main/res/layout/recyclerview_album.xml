@@ -2,38 +2,42 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:padding="@dimen/padding_album_layout">
 
-        <RelativeLayout
-            android:id="@+id/album">
-            <ImageView
-                android:id="@+id/album_cover"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:src="@drawable/a0"
-                android:scaleType="centerCrop"
-                android:alpha="127" />
-            <TextView
-                android:id="@+id/album_played_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="8dp"
-                android:textSize="10sp"
-                android:text="300万"/>
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/ic_headset_black_48dp"
-                android:layout_toLeftOf="@id/album_played_num"/>
-            <TextView
-                android:id="@+id/album_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/album_cover"
-                android:text="hhhhhhh"/>
-        </RelativeLayout>
+    <RelativeLayout android:id="@+id/album">
+
+        <ImageView
+            android:id="@+id/album_cover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_album_cover"
+            android:alpha="127"
+            android:scaleType="centerCrop"
+            android:src="@drawable/a0" />
+
+        <TextView
+            android:id="@+id/album_played_num"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_album_played_num"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/margin_top_album_played_num"
+            android:gravity="center_vertical"
+            android:text="@string/example_album_played_num"
+            android:textSize="@dimen/text_size_album_played_num" />
+
+        <ImageView
+            android:layout_width="@dimen/width_album_played_num"
+            android:layout_height="@dimen/height_album_played_num"
+            android:layout_marginTop="@dimen/margin_top_album_played_num"
+            android:layout_toStartOf="@id/album_played_num"
+            android:src="@drawable/ic_headset_black_48dp" />
+
+        <TextView
+            android:id="@+id/album_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/album_cover"
+            android:text="@string/text_album_title" />
+    </RelativeLayout>
 
 </GridLayout>

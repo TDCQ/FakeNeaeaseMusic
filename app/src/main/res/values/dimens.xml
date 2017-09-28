@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_margin">3dp</dimen>
     <dimen name="card_elevation">3dp</dimen>
     <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="album_margin_top">8dp</dimen>
+    <dimen name="album_margin_end">16dp</dimen>
+    <dimen name="width_album_cover_in_detail">120dp</dimen>
+    <dimen name="height_album_cover_in_detail">120dp</dimen>
+    <dimen name="margin_start_album_cover_in_detail">16dp</dimen>
+    <dimen name="margin_start_album_title_detail">16dp</dimen>
+    <dimen name="margin_top_album_title_detail">16dp</dimen>
+    <dimen name="margin_start_album_creator_detail">16dp</dimen>
+    <dimen name="margin_top_album_creator_detail">16dp</dimen>
+    <dimen name="margin_end_list_title">8dp</dimen>
+    <dimen name="margin_start_list_title">16dp</dimen>
+    <dimen name="margin_top_margin_top">16dp</dimen>
+    <dimen name="width_ic_play_all">24dp</dimen>
+    <dimen name="height_ic_play_all">24dp</dimen>
+    <dimen name="width_play_control_set">0dp</dimen>
+    <dimen name="height_play_control_set">48dp</dimen>
+    <dimen name="outer_radius">300dp</dimen>
+    <dimen name="inner_radius">200dp</dimen>
+    <dimen name="margin_start_inner_cover">50dp</dimen>
+    <dimen name="margin_top_inner_cover">50dp</dimen>
+    <dimen name="height_a_song_record">35dp</dimen>
+    <dimen name="margin_top_a_song_record">8dp</dimen>
+    <dimen name="margin_start_song_order">16dp</dimen>
+    <dimen name="text_size_song_order">20sp</dimen>
+    <dimen name="width_icon_song_record">24dp</dimen>
+    <dimen name="margin_start_song_detail">45dp</dimen>
+    <dimen name="margin_bottom_song_detail">4dp</dimen>
+    <dimen name="text_size_song_quality">10sp</dimen>
+    <dimen name="margin_start_song_record_detail">4dp</dimen>
+    <dimen name="margin_end_song_record_detail">4dp</dimen>
+    <dimen name="padding_album_layout">4dp</dimen>
+    <dimen name="height_album_cover">120dp</dimen>
+    <dimen name="margin_top_album_played_num">8dp</dimen>
+    <dimen name="text_size_album_played_num">10sp</dimen>
+    <dimen name="width_album_played_num">24dp</dimen>
+    <dimen name="height_album_played_num">24dp</dimen>
 </resources>

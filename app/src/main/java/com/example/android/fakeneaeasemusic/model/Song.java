@@ -6,7 +6,7 @@ package com.example.android.fakeneaeasemusic.model;
 
 public class Song {
     private String name;
-    private  String singer;
+    private String singer;
     private String album;
     private String sound_quality;
 

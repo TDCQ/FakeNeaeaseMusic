@@ -19,21 +19,11 @@ import java.util.ArrayList;
  * Created by lenovo on 9/26/2017.
  */
 
-public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHolder>  {
+public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHolder> {
     private ArrayList<Album> albumArrayList;
 
-    // 设置内部类来绑定RecyclerView 中的视图与ViewHolder
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_album_played_num, tv_album_title;
-        ImageView iv_album_cover;
-        RelativeLayout rl_album;
-        public ViewHolder(View itemView) {
-            super(itemView);
-            tv_album_played_num = itemView.findViewById(R.id.album_played_num);
-            tv_album_title = itemView.findViewById(R.id.album_title);
-            iv_album_cover = itemView.findViewById(R.id.album_cover);
-            rl_album = itemView.findViewById(R.id.album);
-        }
+    public AdapterForAlbum(ArrayList<Album> albumArrayList) {
+        this.albumArrayList = (ArrayList<Album>) albumArrayList.clone();
     }
 
     // LayoutManager 调用此函数，创建新视图
@@ -41,7 +31,7 @@ public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHo
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 创建视图
         View v = LayoutInflater.from(parent.getContext())
-                 .inflate(R.layout.recyclerview_album, parent, false);
+                .inflate(R.layout.recyclerview_album, parent, false);
         // 返回视图holder
         return new ViewHolder(v);
     }
@@ -89,9 +79,19 @@ public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHo
         return albumArrayList.size();
     }
 
+    // 设置内部类来绑定RecyclerView 中的视图与ViewHolder
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_album_played_num, tv_album_title;
+        ImageView iv_album_cover;
+        RelativeLayout rl_album;
 
-    public AdapterForAlbum(ArrayList<Album> albumArrayList) {
-        this.albumArrayList = (ArrayList<Album>) albumArrayList.clone();
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tv_album_played_num = itemView.findViewById(R.id.album_played_num);
+            tv_album_title = itemView.findViewById(R.id.album_title);
+            iv_album_cover = itemView.findViewById(R.id.album_cover);
+            rl_album = itemView.findViewById(R.id.album);
+        }
     }
 
 }

@@ -14,36 +14,37 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_repeat_black_48dp"/>
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/width_play_control_set"
+            android:layout_height="@dimen/height_play_control_set"
+            android:layout_weight="1"
+            android:src="@drawable/ic_repeat_black_48dp" />
+
+        <ImageView
+            android:layout_width="@dimen/width_play_control_set"
+            android:layout_height="@dimen/height_play_control_set"
             android:layout_weight="1"
             android:rotation="180"
-            android:src="@drawable/ic_skip_next_black_48dp"/>
+            android:src="@drawable/ic_skip_next_black_48dp" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/width_play_control_set"
+            android:layout_height="@dimen/height_play_control_set"
             android:layout_weight="1"
-            android:src="@drawable/ic_play_circle_outline_black_48dp"/>
+            android:src="@drawable/ic_play_circle_outline_black_48dp" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/width_play_control_set"
+            android:layout_height="@dimen/height_play_control_set"
             android:layout_weight="1"
-            android:src="@drawable/ic_skip_next_black_48dp"/>
+            android:src="@drawable/ic_skip_next_black_48dp" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/width_play_control_set"
+            android:layout_height="@dimen/height_play_control_set"
             android:layout_weight="1"
-            android:src="@drawable/ic_menu_black_48dp"/>
+            android:src="@drawable/ic_menu_black_48dp" />
     </LinearLayout>
 
     <RelativeLayout
@@ -51,18 +52,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/play_control_set">
+
         <TextView
             android:id="@+id/song_start_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00:00"/>
+            android:text="@string/song_start_time" />
 
         <TextView
             android:id="@+id/song_end_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="03:50"/>
+            android:text="@string/song_end_time" />
 
         <SeekBar
             android:id="@+id/song_seek_bar"
@@ -79,31 +81,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/song_play_status"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_like_heart"/>
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_file_download_black_48dp"/>
+            android:src="@drawable/ic_like_heart" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_message_black_48dp"/>
+            android:src="@drawable/ic_file_download_black_48dp" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_more_vert_black_48dp"/>
+            android:src="@drawable/ic_message_black_48dp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_more_vert_black_48dp" />
 
     </LinearLayout>
 
@@ -115,23 +118,23 @@
         android:gravity="center">
 
         <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="@dimen/outer_radius"
+            android:layout_height="@dimen/outer_radius"
             android:gravity="center_horizontal">
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="50dp"
-                android:background="@drawable/a0"/>
+                android:layout_width="@dimen/inner_radius"
+                android:layout_height="@dimen/inner_radius"
+                android:layout_marginStart="@dimen/margin_start_inner_cover"
+                android:layout_marginTop="@dimen/margin_top_inner_cover"
+                android:background="@drawable/a0" />
 
             <ImageView
                 android:id="@+id/song_of_album_cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/shape_album"/>
+                android:src="@drawable/shape_album" />
 
         </RelativeLayout>
 

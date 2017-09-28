@@ -17,7 +17,7 @@ public class Album {
     public Album() {
     }
 
-    public Album(String playedNum, String author,String title, ArrayList<Song> arrayList) {
+    public Album(String playedNum, String author, String title, ArrayList<Song> arrayList) {
         this.playedNum = playedNum;
         this.author = author;
         this.title = title;
