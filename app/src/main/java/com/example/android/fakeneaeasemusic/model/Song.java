@@ -5,50 +5,50 @@ package com.example.android.fakeneaeasemusic.model;
  */
 
 public class Song {
-    private String name;
-    private String singer;
-    private String album;
-    private String sound_quality;
+    private String mName;
+    private String mSinger;
+    private String mAlbum;
+    private String mSoundQuality;
 
     public Song() {
     }
 
-    public Song(String name, String singer, String album, String sound_quality) {
-        this.name = name;
-        this.singer = singer;
-        this.album = album;
-        this.sound_quality = sound_quality;
+    public Song(String mName, String mSinger, String mAlbum, String mSoundQuality) {
+        this.mName = mName;
+        this.mSinger = mSinger;
+        this.mAlbum = mAlbum;
+        this.mSoundQuality = mSoundQuality;
     }
 
-    public String getName() {
-        return name;
+    public String getmName() {
+        return mName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setmName(String mName) {
+        this.mName = mName;
     }
 
-    public String getSinger() {
-        return singer;
+    public String getmSinger() {
+        return mSinger;
     }
 
-    public void setSinger(String singer) {
-        this.singer = singer;
+    public void setmSinger(String mSinger) {
+        this.mSinger = mSinger;
     }
 
-    public String getAlbum() {
-        return album;
+    public String getmAlbum() {
+        return mAlbum;
     }
 
-    public void setAlbum(String album) {
-        this.album = album;
+    public void setmAlbum(String mAlbum) {
+        this.mAlbum = mAlbum;
     }
 
-    public String getSound_quality() {
-        return sound_quality;
+    public String getmSoundQuality() {
+        return mSoundQuality;
     }
 
-    public void setSound_quality(String sound_quality) {
-        this.sound_quality = sound_quality;
+    public void setmSoundQuality(String mSoundQuality) {
+        this.mSoundQuality = mSoundQuality;
     }
 }

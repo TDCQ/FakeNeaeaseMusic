@@ -24,4 +24,13 @@
     <string name="separator_singer_album">-</string>
     <string name="example_album_played_num">300万</string>
     <string name="text_album_title">hhhhhhh</string>
+    <string name="album_json_key">albums</string>
+    <string name="songs_json_key">songs</string>
+    <string name="album_name_json_key">album_name</string>
+    <string name="song_title_json_key">song_title</string>
+    <string name="singer_json_key">singer</string>
+    <string name="song_quality_json_key">song_quality</string>
+    <string name="album_title_json_key">album_title</string>
+    <string name="album_creator_json_key">creator</string>
+    <string name="album_played_num_json_key">played_num</string>
 </resources>

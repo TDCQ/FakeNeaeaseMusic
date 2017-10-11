@@ -1,8 +1,20 @@
 package com.example.android.fakeneaeasemusic.resource;
 
+import android.content.Context;
+import android.util.Log;
+
+import com.example.android.fakeneaeasemusic.R;
 import com.example.android.fakeneaeasemusic.model.Album;
 import com.example.android.fakeneaeasemusic.model.Song;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -10,65 +22,62 @@ import java.util.ArrayList;
  */
 
 public class ResourceAlbum {
-    private ArrayList<Album> albumArrayList;
+    private static ArrayList<Album> albumArrayList;
 
-    public ResourceAlbum() {
-        createListAlbum();
+    private ResourceAlbum(Context context) {
+        this.albumArrayList = getArrayListAlbums(context);
+        Log.v("this.albumArrayList=", "" + this.albumArrayList.size());
     }
 
-    public ArrayList<Album> getAlbumArrayList() {
-        return this.albumArrayList;
-    }
+    public static ArrayList<Album> getArrayListAlbums(Context context) {
+        try {
+            if (ResourceAlbum.albumArrayList == null || ResourceAlbum.albumArrayList.size() == 0) {
+                synchronized (ResourceAlbum.class) {
+                    // The InputStream opens the resourceId and sends it to the buffer
+                    InputStream inputStream = context.getResources().openRawResource(R.raw.album);
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        stringBuilder.append(line).append('\n');
+                    }
+                    line = stringBuilder.toString();
+                    JSONObject jsonObject = new JSONObject(line);
 
-    public void setAlbumArrayList(ArrayList<Album> albumArrayList) {
-        this.albumArrayList = albumArrayList;
-    }
-
-    public void createListAlbum() {
-        albumArrayList = new ArrayList<Album>();
-        // 第一张专辑
-        ArrayList<Song> arrayList = new ArrayList<Song>();
-        arrayList.add(new Song("Wonderland", "卫兰/廿四味", "Wonderland", ""));
-        arrayList.add(new Song("比你浪，比你棒", "Ty.", "比你浪，比你棒", "HQ"));
-        arrayList.add(new Song("一口气全念对", "周杰伦", "哎呦，不错哦", "SQ"));
-        Album album = new Album("2413万", "柚子_ccc", "这波节奏很棒很强", arrayList);
-        albumArrayList.add(album);
-        // 第二张专辑
-        ArrayList<Song> arrayList1 = new ArrayList<Song>();
-        arrayList1.add(new Song("Battle Symphony", "Linkin Park", "One more night", "SQ"));
-        arrayList1.add(new Song("Immortals(End Credit Version)", "Fall out Boy", "Immortals(End Credit Version)", "HQ"));
-        arrayList1.add(new Song("I just want run", "周杰伦", "哎呦，不错哦", "SQ"));
-        Album album1 = new Album("5994万", "零下Young", "【欧美男团】秒杀耳朵系列", arrayList1);
-        albumArrayList.add(album1);
-        // 第三张专辑
-        ArrayList<Song> arrayList2 = new ArrayList<Song>();
-        arrayList2.add(new Song("The More", "Hans Zimmer", "Dunkirk: Original Motion Picture", "SQ"));
-        arrayList2.add(new Song("Helmet to Helmet", "Brand X Music", "Oblivion Rise", ""));
-        arrayList2.add(new Song("Dota", "Basshunter", "Now You're gone", "SQ"));
-        Album album2 = new Album("4602万", "皇太极", "【酷到没朋友】BGM燃点爆炸", arrayList2);
-        albumArrayList.add(album2);
-        // 第四张专辑
-        ArrayList<Song> arrayList3 = new ArrayList<Song>();
-        arrayList3.add(new Song("寂静之声", "群星", "吟唱天堂", ""));
-        arrayList3.add(new Song("天空之城", "K.Williams", "金色钢琴", "HQ"));
-        arrayList3.add(new Song("爱的纪念", "Richard Clayderman", "Richard Clayderman", "SQ"));
-        Album album3 = new Album("3241万", "橘子树风车", "世界上最好听的纯音乐（经典不朽）", arrayList3);
-        albumArrayList.add(album3);
-        // 第五张专辑
-        ArrayList<Song> arrayList4 = new ArrayList<Song>();
-        arrayList4.add(new Song("Gently Dreaming", "", "", ""));
-        arrayList4.add(new Song("The Canon Stirs", ".", "", "HQ"));
-        arrayList4.add(new Song("Music life in forest", "", "", "SQ"));
-        Album album4 = new Album("1934万", "DJ雪梨", "安静看书的背景音乐", arrayList4);
-        albumArrayList.add(album4);
-        // 第六张专辑
-        ArrayList<Song> arrayList5 = new ArrayList<Song>();
-        arrayList5.add(new Song("Wonderland", "卫兰/廿四味", "Wonderland", ""));
-        arrayList5.add(new Song("比你浪，比你棒", "Ty.", "比你浪，比你棒", "HQ"));
-        arrayList5.add(new Song("一口气全念对", "周杰伦", "哎呦，不错哦", "SQ"));
-        Album album5 = new Album("2802万", "柚子_ccc", "这波节奏很棒很强", arrayList5);
-        albumArrayList.add(album5);
-
+                    // 解析json对象，重组Albums资源。 这里会有多张专辑，每张专辑又有多首歌
+                    JSONArray albumsJSONArray = jsonObject.getJSONArray(context.getString(R.string.album_json_key));
+                    ArrayList<Album> arrayListAlbum = new ArrayList<Album>();
+                    //  外层循环遍历专辑
+                    for (int i = 0; i < albumsJSONArray.length(); i++) {
+                        Album album = new Album();
+                        JSONObject albumJSONObject = albumsJSONArray.getJSONObject(i);
+                        JSONArray songsJSONArray = albumJSONObject.getJSONArray(context.getString(R.string.songs_json_key));
+                        ArrayList<Song> arrayListSong = new ArrayList<>();
+                        // 内层循环遍历一张专辑里的每首歌
+                        for (int j = 0; j < songsJSONArray.length(); j++) {
+                            Song song = new Song();
+                            JSONObject songJSONObject = songsJSONArray.getJSONObject(j);
+                            song.setmAlbum(songJSONObject.getString(context.getString(R.string.album_name_json_key)));
+                            song.setmName(songJSONObject.getString(context.getString(R.string.song_title_json_key)));
+                            song.setmSinger(songJSONObject.getString(context.getString(R.string.singer_json_key)));
+                            song.setmSoundQuality(songJSONObject.getString(context.getString(R.string.song_quality_json_key)));
+                            arrayListSong.add(song);
+                        }
+                        album.setTitle(albumJSONObject.getString(context.getString(R.string.album_title_json_key)));
+                        album.setAuthor(albumJSONObject.getString(context.getString(R.string.album_creator_json_key)));
+                        album.setPlayedNum(albumJSONObject.getString(context.getString(R.string.album_played_num_json_key)));
+                        album.setArrayList(arrayListSong);
+                        arrayListAlbum.add(album);
+                    }
+                    return arrayListAlbum;
+                }
+            } else {
+                return ResourceAlbum.albumArrayList;
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
 }

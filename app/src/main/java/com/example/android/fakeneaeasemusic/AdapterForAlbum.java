@@ -1,5 +1,6 @@
 package com.example.android.fakeneaeasemusic;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -23,7 +24,7 @@ public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHo
     private ArrayList<Album> albumArrayList;
 
     public AdapterForAlbum(ArrayList<Album> albumArrayList) {
-        this.albumArrayList = (ArrayList<Album>) albumArrayList.clone();
+        this.albumArrayList = albumArrayList;
     }
 
     // LayoutManager 调用此函数，创建新视图
@@ -38,11 +39,11 @@ public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHo
 
     // 替换视图中的内容
     @Override
-    public void onBindViewHolder(AdapterForAlbum.ViewHolder holder, final int position) {
+    public void onBindViewHolder(AdapterForAlbum.ViewHolder holder, int position) {
+        final int current_song_order = position;
         Album album = albumArrayList.get(position);
         holder.tv_album_played_num.setText(album.getPlayedNum());
         holder.tv_album_title.setText(album.getTitle());
-        Log.e("position", "position=" + position);
         switch (position) {
             case 0:
                 holder.iv_album_cover.setImageResource(R.drawable.a0);
@@ -68,10 +69,12 @@ public class AdapterForAlbum extends RecyclerView.Adapter<AdapterForAlbum.ViewHo
             public void onClick(View view) {
                 Context context = view.getContext();
                 Intent albumDetailIntent = new Intent(context, AlbumActivity.class);
-                albumDetailIntent.putExtra("albumNo", position);
+                albumDetailIntent.putExtra("albumNo", current_song_order);
+                albumDetailIntent.putExtra("album_title", albumArrayList.get(current_song_order).getTitle());
                 context.startActivity(albumDetailIntent);
             }
         });
+
     }
 
     @Override

@@ -11,6 +11,7 @@
         android:id="@+id/recycler_view_album"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:onClick="onClick"
         android:scrollbars="horizontal" />
 
 </RelativeLayout>

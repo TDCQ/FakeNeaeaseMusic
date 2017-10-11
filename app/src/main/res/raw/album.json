@@ -1,0 +1,154 @@
+{
+  "albums": [
+    {
+      "album_title": "这波节奏很棒很强",
+      "creator": "柚子_ccc",
+      "played_num": "2413万",
+      "songs": [
+        {
+          "song_title": "Wonderland",
+          "singer": "卫兰/廿四味",
+          "album_name": "Wonderland",
+          "song_quality": ""
+        },
+        {
+          "song_title": "比你浪，比你棒",
+          "singer": "Ty.",
+          "album_name": "比你浪，比你棒",
+          "song_quality": "HQ"
+        },
+        {
+          "song_title": "一口气全念对",
+          "singer": "周杰伦",
+          "album_name": "哎呦，不错哦",
+          "song_quality": ""
+        }
+      ]
+    },
+    {
+      "album_title": "【欧美男团】秒杀耳朵系列",
+      "creator": "零下Young",
+      "played_num": "5994万",
+      "songs": [
+        {
+          "song_title": "Battle Symphony",
+          "singer": "Linkin Park",
+          "album_name": "One more night",
+          "song_quality": "SQ"
+        },
+        {
+          "song_title": "Immortals(End Credit Version)",
+          "singer": "Fall out Boy",
+          "album_name": "Immortals(End Credit Version)",
+          "song_quality": "HQ"
+        },
+        {
+          "song_title": "I just want run",
+          "singer": "周杰伦",
+          "album_name": "哎呦，不错哦",
+          "song_quality": "SQ"
+        }
+      ]
+    },
+    {
+      "album_title": "【酷到没朋友】BGM燃点爆炸",
+      "creator": "皇太极",
+      "played_num": "4602万",
+      "songs": [
+        {
+          "song_title": "The More",
+          "singer": "Hans Zimmer",
+          "album_name": "Dunkirk: Original Motion Picture",
+          "song_quality": ""
+        },
+        {
+          "song_title": "Helmet to Helmet",
+          "singer": "Brand X Music",
+          "album_name": "Oblivion Rise",
+          "song_quality": ""
+        },
+        {
+          "song_title": "Dota",
+          "singer": "Basshunter",
+          "album_name": "Now You're gone",
+          "song_quality": "SQ"
+        }
+      ]
+    },
+    {
+      "album_title": "世界上最好听的纯音乐（经典不朽）",
+      "creator": "橘子树风车",
+      "played_num": "3241万",
+      "songs": [
+        {
+          "song_title": "寂静之声",
+          "singer": "群星",
+          "album_name": "吟唱天堂",
+          "song_quality": ""
+        },
+        {
+          "song_title": "天空之城",
+          "singer": "K.Williams",
+          "album_name": "金色钢琴",
+          "song_quality": "HQ"
+        },
+        {
+          "song_title": "爱的纪念",
+          "singer": "Richard Clayderman",
+          "album_name": "Richard Clayderman",
+          "song_quality": "SQ"
+        }
+      ]
+    },
+    {
+      "album_title": "安静看书的背景音乐",
+      "creator": "DJ雪梨",
+      "played_num": "1934万",
+      "songs": [
+        {
+          "song_title": "Gently Dreaming",
+          "singer": "",
+          "album_name": "",
+          "song_quality": ""
+        },
+        {
+          "song_title": "The Canon Stirs",
+          "singer": "",
+          "album_name": "",
+          "song_quality": "SQ"
+        },
+        {
+          "song_title": "Music life in forest",
+          "singer": "",
+          "album_name": "SQ",
+          "song_quality": ""
+        }
+      ]
+    },
+    {
+      "album_title": "这波节奏很棒很强",
+      "creator": "柚子_ccc",
+      "played_num": "2413万",
+      "songs": [
+        {
+          "song_title": "Wonderland",
+          "singer": "卫兰/廿四味",
+          "album_name": "Wonderland",
+          "song_quality": ""
+        },
+        {
+          "song_title": "比你浪，比你棒",
+          "singer": "Ty.",
+          "album_name": "比你浪，比你棒",
+          "song_quality": "HQ"
+        },
+        {
+          "song_title": "一口气全念对",
+          "singer": "周杰伦",
+          "album_name": "哎呦，不错哦",
+          "song_quality": ""
+        }
+      ]
+    }
+  ]
+}
